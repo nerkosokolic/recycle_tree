@@ -44,6 +44,7 @@ require_relative 'routes/session'
 
 
 
+
 after do
   ActiveRecord::Base.connection.close
 end
@@ -51,6 +52,7 @@ end
 get '/' do
   erb :index
 end
+
 
 
 
