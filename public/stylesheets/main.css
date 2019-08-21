@@ -178,6 +178,7 @@
     padding: 0;
   
   }
+
   
   #topnav a:hover {
     background-color: rgba(255, 255, 255, 0.3);
@@ -230,7 +231,7 @@
   }
   
   .small-p {
-    color: #109461;
+    color: grey;
     font-size: 0.9em;
   }
   
@@ -345,11 +346,32 @@
     float: left;
     width: 50%;
   }
-  
+
+  .third-btn {
+    float: left;
+    width: 28%;
+    padding: 10px;
+    margin: 10px;
+    /* display: flex;
+    flex-direction: row;
+    justify-content: space-between; */
+  }
+
+  .subheading {
+      text-align: center;
+      background-color: #62caa2;
+      max-width: 500px;
+      padding: 1px 0 1px 0;
+      margin: 20px auto;
+  }
+
+  .subheading h2 {
+    color: white;
+    
+}
   .container {
     padding: 16px;
     text-align: left;
-    max-width: 500px;
   
     margin: 0 auto;
     background-color: white;
@@ -367,7 +389,20 @@
     clear: both;
     display: table;
   }
+
+  .img-text-box {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+  }
   
+  .listing-img {
+    object-fit: cover;
+    height: 300px;
+    width: 100%;
+    margin: 20px 0 20px 0;
+  }
+
   @media screen and (max-width: 300px) {
     .cancelbtn, .signupbtn {
       width: 100%;
