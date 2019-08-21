@@ -452,7 +452,7 @@
 .listing-container {
   padding: 16px;
   text-align: left;
-  max-width: 800px;
+  max-width: 950px;
 
   margin: 0 auto;
   background-color: white;
@@ -460,7 +460,6 @@
   margin: 30px auto;
   padding: 20px;
   border-style: none;
-  width: 90%; 
 
 }
 
@@ -500,4 +499,45 @@
 
 .listing-picture {
   padding: 30px 20px;
+}
+
+.account-listing-table {
+  width: 100%;
+}
+
+.account-listing-table th  {
+  padding-right: 100px;
+}
+
+.account-listing-table button  {
+  margin-right: 10px;
+}
+
+.map-map {
+  margin-top: 20px;
+  width: 800px;
+  height: 600px;
+  background-color: red;
+}
+.messages-container {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.messages-aside {
+  height: 50px;
+  width: 33%;
+  margin: 0;
+}
+
+.aside-message {
+  width: 100%;
+}
+
+.messages-body {
+  width: 66%;
+  margin: 0;
+  padding: 0;
+  border-left: 2px solid black;
 }
