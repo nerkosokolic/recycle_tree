@@ -33,17 +33,6 @@ end
 also_reload File.expand_path(__dir__, "views/*")
 also_reload File.expand_path(__dir__, "models/*")
 
-get '/listing' do
-  erb :listing
-end
-
-get '/give_form' do
-  erb :give_form
-end
-
-get '/give_preview' do
-  erb :give_preview
-end
 
 
 
