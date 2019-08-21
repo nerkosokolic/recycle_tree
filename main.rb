@@ -10,7 +10,24 @@ require_relative 'models/listing'
 require_relative 'models/message'
 require_relative 'models/user'
 
+
 enable :sessions
+
+helpers do
+
+  def logged_in?  
+    if current_user
+      return true  
+    else
+      return false
+  end
+end
+
+  def current_user
+    User.find_by(id: session[:user_id]) 
+  end
+
+end
 
 
 also_reload File.expand_path(__dir__, "views/*")
