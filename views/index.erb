@@ -1,7 +1,7 @@
 <div class="home-section">
-<div class="intro">
-    I want to
-</div>
+    <div class="intro">
+        I want to
+    </div>
     <button class="home-option-btn">GIVE</button>
     <button class="home-option-btn">FIND</button>
     <button class="home-option-btn">DISPOSE</button>
@@ -16,67 +16,66 @@
         <input class="home-search-location" type="text" name="location" placeholder="location">
         <button class="home-search-btn">search</button>
     </form>
-<div class='all-home-icons'>
-<div>
-<div class='home-icons'>
-    <div class="home-search-option icon-name">Automotive</div>
-    <img class="home-search-option icon-btn" src="/images/car.png" alt="">
-</div>
+    <div class='all-home-icons'>
+        <div>
+            <div class='home-icons'>
+                <div class="home-search-option icon-name">Automotive</div>
+               <a href="/find"> <img class="home-search-option icon-btn" src="/images/car.png" alt=""></a>
+            </div>
 
-<div class='home-icons'>
-    <div class="home-search-option icon-name">Construction</div>
-    <img class="home-search-option icon-btn" src="/images/construction.png" alt="">
-</div>
+            <div class='home-icons'>
+                <div class="home-search-option icon-name">Construction</div>
+                <a href="/find"><img class="home-search-option icon-btn" src="/images/construction.png" alt=""></a>
+            </div>
 
-<div class='home-icons'>
-    <div class="home-search-option icon-name">Electronics</div>
-    <img class="home-search-option icon-btn" src="/images/electronics.png" alt="">
-</div>
+            <div class='home-icons'>
+                <div class="home-search-option icon-name">Electronics</div>
+                <a href="/find"><img class="home-search-option icon-btn" src="/images/electronics.png" alt=""></a>
+            </div>
 
-<div class='home-icons'>
-    <div class="home-search-option icon-name">Glass</div>
-    <img class="home-search-option icon-btn" src="/images/glass.png" alt="">
-</div>
+            <div class='home-icons'>
+                <div class="home-search-option icon-name">Glass</div>
+                <a href="/find"><img class="home-search-option icon-btn" src="/images/glass.png" alt=""></a>
+            </div>
 
-<div class='home-icons'>
-    <div class="home-search-option icon-name">Hazardous</div>
-    <img class="home-search-option icon-btn" src="/images/hazardous.png" alt="">
-</div>
+            <div class='home-icons'>
+                <div class="home-search-option icon-name">Hazardous</div>
+                <a href="/find"><img class="home-search-option icon-btn" src="/images/hazardous.png" alt=""></a>
+            </div>
 
-<div class='home-icons'>
-    <div class="home-search-option icon-name">Household</div>
-    <img class="home-search-option icon-btn" src="/images/household.png" alt="">
-</div>
+            <div class='home-icons'>
+                <div class="home-search-option icon-name">Household</div>
+                <a href="/find"><img class="home-search-option icon-btn" src="/images/household.png" alt=""></a>
+            </div>
 
-<div class='home-icons'>
-    <div class="home-search-option icon-name">Metal</div>
-    <img class="home-search-option icon-btn" src="/images/metal.png" alt="">
-</div>
+            <div class='home-icons'>
+                <div class="home-search-option icon-name">Metal</div>
+                <a href="/find"><img class="home-search-option icon-btn" src="/images/metal.png" alt=""></a>
+            </div>
 
-<div class='home-icons'>
-    <div class="home-search-option icon-name">Organic Waste</div>
-    <img class="home-search-option icon-btn" src="/images/organic-waste.png" alt="">
-</div>
+            <div class='home-icons'>
+                <div class="home-search-option icon-name">Organic Waste</div>
+                <a href="/find"><img class="home-search-option icon-btn" src="/images/organic-waste.png" alt=""></a>
+            </div>
 
-<div class='home-icons'>
-    <div class="home-search-option icon-name">Packaging</div>
-    <img class="home-search-option icon-btn" src="/images/packaging.png" alt="">
-</div>
+            <div class='home-icons'>
+                <div class="home-search-option icon-name">Packaging</div>
+                <a href="/find"><img class="home-search-option icon-btn" src="/images/packaging.png" alt=""></a>
+            </div>
 
-<div class='home-icons'>
-    <div class="home-search-option icon-name">Paper</div>
-    <img class="home-search-option icon-btn" src="/images/paper.png" alt="">
+            <div class='home-icons'>
+                <div class="home-search-option icon-name">Paper</div>
+                <a href="/find"><img class="home-search-option icon-btn" src="/images/paper.png" alt=""></a>
+            </div>
+        </div>
+    </div>
+        <form class="home-search-option dispose" action="/sessions" method="post">
+            <label for="">dispose</label>
+            <input class="home-search" type="text" name="item" placeholder="item">
+            <input class="home-search-location" type="text" name="location" placeholder="location">
+            <button class="home-search-btn">search</button>
+        </form>
 </div>
-</div>
-</div>
-    <form class="home-search-option dispose" action="/sessions" method="post">
-        <label for="">dispose</label>
-        <input class="home-search" type="text" name="item" placeholder="item">
-        <input class="home-search-location" type="text" name="location" placeholder="location">
-        <button class="home-search-btn">search</button>
-    </form>
-</div>
-
 
 
 <script>
@@ -91,15 +90,11 @@ var handleClick = function(evet){
     if (homeOptionBtn.textContent === "GIVE") {
         var findSearchOption = document.querySelector('.find')
         findSearchOption.style.display = "none"
-
         var disposeSearchOption = document.querySelector('.dispose')
         disposeSearchOption.style.display = "none"
-
         var allIconHome = document.querySelector('.all-home-icons')
         allIconHome.style.display = "none"
-
         var giveSearchOption = document.querySelector('.give')
-        //  debugger
         if (giveSearchOption.style.display === "") {
         giveSearchOption.style.display = "block"
         } else if (giveSearchOption.style.display === "block") {
@@ -111,51 +106,33 @@ var handleClick = function(evet){
     }
 
     if (homeOptionBtn.textContent === "FIND") {
-    
-        
         var giveSearchOption = document.querySelector('.give')
         giveSearchOption.style.display = "none"
-
         var disposeSearchOption = document.querySelector('.dispose')
         disposeSearchOption.style.display = "none"
-
         var findSearchOption = document.querySelector('.find')
-        var iconName = document.querySelector('.icon-name')
-        var iconBtn = document.querySelector('.icon-btn')
         var allIconHome = document.querySelector('.all-home-icons')
-        
-        //  debugger
         if (findSearchOption.style.display === "") {
         findSearchOption.style.display = "block"
-        // iconName.style.display = "block"
-        // iconBtn.style.display = "block"
         allIconHome.style.display = "block"
         } else if (findSearchOption.style.display === "block") {
         findSearchOption.style.display = "none"
-        // iconName.style.display = "none"
-        // iconBtn.style.display = "none"
         allIconHome.style.display = "none"
         } else if (findSearchOption.style.display === "none") {
         findSearchOption.style.display = "block"
-        // iconName.style.display = "block"
-        // iconBtn.style.display = "block"
         allIconHome.style.display = "block"
         }
     
     }
 
     if (homeOptionBtn.textContent === "DISPOSE") {
-        var disposeSearchOption = document.querySelector('.dispose')
-
         var giveSearchOption = document.querySelector('.give')
         giveSearchOption.style.display = "none"
-
         var findSearchOption = document.querySelector('.find')
         findSearchOption.style.display = "none"
-
         var allIconHome = document.querySelector('.all-home-icons')
         allIconHome.style.display = "none"
-        //  debugger
+        var disposeSearchOption = document.querySelector('.dispose')
         if (disposeSearchOption.style.display === "") {
         disposeSearchOption.style.display = "block"
         } else if (disposeSearchOption.style.display === "block") {
