@@ -37,6 +37,14 @@ get '/' do
   erb :index
 end
 
+get '/give_form' do
+  erb :give_form
+end
+
+get '/give_preview' do
+  erb :give_preview
+end
+
 
 require_relative 'routes/account'
 require_relative 'routes/comment'
