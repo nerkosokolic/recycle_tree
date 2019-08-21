@@ -15,6 +15,64 @@
     height: 400px;
     
   }
+
+.intro {
+  padding: 0 0 20px;
+}
+
+input[type=text].home-search {
+  width: 35%;
+  margin: 20px 0 ;
+}
+
+input[type=text].home-search-location {
+  width: 15%;
+  margin: 20px 0 ;
+}
+
+.home-section {
+  text-align: center;
+  padding-top: 100px;
+  height: 500px;
+  /* background: url(https://www.youtube.com/embed/QaMgGbDQ50w?autoplay=1&controls=0&showinfo=0&autohide=1&mute=1);
+  background-attachment: fixed; */
+}
+
+.home-option-btn {
+    /* background-color: #109461; */
+}
+
+.home-search-option {
+    display: none;
+    text-align: center;
+}
+
+.home-icons {
+  display: inline-flex;
+  flex-direction: column;
+  padding: 1% 5% 0;
+}
+
+.home-icons:hover {
+  background-color: #f1f1f1;
+}
+
+.icon-name {
+  font-size: 1vw;
+  display: block;
+  text-align: center;
+  color: #0c8cb7;
+}
+
+.icon-btn {
+  display: block;
+  object-fit: contain;
+  width: 8vw;
+}
+
+.all-home-icons {
+  display: none;
+}
   
   .top-right {
     padding: 20px;

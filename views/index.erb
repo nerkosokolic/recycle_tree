@@ -1,22 +1,83 @@
+<div class="home-section">
+<div class="intro">
+    I want to
+</div>
+    <button class="home-option-btn">GIVE</button>
+    <button class="home-option-btn">FIND</button>
+    <button class="home-option-btn">DISPOSE</button>
+    <form class="home-search-option give" action="/sessions" method="post">
+        <label for="">give</label>
+        <input class="home-search" type="text" name="item" placeholder="item">
+        <button class="home-search-btn">search</button>
+    </form>
+    <form class="home-search-option find" action="/sessions" method="post">
+        <label for="">find</label>
+        <input class="home-search" type="text" name="item" placeholder="item">
+        <input class="home-search-location" type="text" name="location" placeholder="location">
+        <button class="home-search-btn">search</button>
+    </form>
+<div class='all-home-icons'>
+<div>
+<div class='home-icons'>
+    <div class="home-search-option icon-name">Automotive</div>
+    <img class="home-search-option icon-btn" src="/images/car.png" alt="">
+</div>
 
-<button class="home-option-btn">GIVE</button>
-<button class="home-option-btn">FIND</button>
-<button class="home-option-btn">DISPOSE</button>
-<form class="home-search-option give" action="/sessions" method="post">
-    <label for="">give</label>
-    <input type="text" name="email">
-    <button class="home-search-btn">search</button>
-</form>
-<form class="home-search-option find" action="/sessions" method="post">
-    <label for="">find</label>
-    <input type="text" name="email">
-    <button class="home-search-btn">search</button>
-</form>
-<form class="home-search-option dispose" action="/sessions" method="post">
-    <label for="">dispose</label>
-    <input type="text" name="email">
-    <button class="home-search-btn">search</button>
-</form>
+<div class='home-icons'>
+    <div class="home-search-option icon-name">Construction</div>
+    <img class="home-search-option icon-btn" src="/images/construction.png" alt="">
+</div>
+
+<div class='home-icons'>
+    <div class="home-search-option icon-name">Electronics</div>
+    <img class="home-search-option icon-btn" src="/images/electronics.png" alt="">
+</div>
+
+<div class='home-icons'>
+    <div class="home-search-option icon-name">Glass</div>
+    <img class="home-search-option icon-btn" src="/images/glass.png" alt="">
+</div>
+
+<div class='home-icons'>
+    <div class="home-search-option icon-name">Hazardous</div>
+    <img class="home-search-option icon-btn" src="/images/hazardous.png" alt="">
+</div>
+
+<div class='home-icons'>
+    <div class="home-search-option icon-name">Household</div>
+    <img class="home-search-option icon-btn" src="/images/household.png" alt="">
+</div>
+
+<div class='home-icons'>
+    <div class="home-search-option icon-name">Metal</div>
+    <img class="home-search-option icon-btn" src="/images/metal.png" alt="">
+</div>
+
+<div class='home-icons'>
+    <div class="home-search-option icon-name">Organic Waste</div>
+    <img class="home-search-option icon-btn" src="/images/organic-waste.png" alt="">
+</div>
+
+<div class='home-icons'>
+    <div class="home-search-option icon-name">Packaging</div>
+    <img class="home-search-option icon-btn" src="/images/packaging.png" alt="">
+</div>
+
+<div class='home-icons'>
+    <div class="home-search-option icon-name">Paper</div>
+    <img class="home-search-option icon-btn" src="/images/paper.png" alt="">
+</div>
+</div>
+</div>
+    <form class="home-search-option dispose" action="/sessions" method="post">
+        <label for="">dispose</label>
+        <input class="home-search" type="text" name="item" placeholder="item">
+        <input class="home-search-location" type="text" name="location" placeholder="location">
+        <button class="home-search-btn">search</button>
+    </form>
+</div>
+
+
 
 <script>
 console.log("working")
@@ -34,6 +95,9 @@ var handleClick = function(evet){
         var disposeSearchOption = document.querySelector('.dispose')
         disposeSearchOption.style.display = "none"
 
+        var allIconHome = document.querySelector('.all-home-icons')
+        allIconHome.style.display = "none"
+
         var giveSearchOption = document.querySelector('.give')
         //  debugger
         if (giveSearchOption.style.display === "") {
@@ -47,6 +111,8 @@ var handleClick = function(evet){
     }
 
     if (homeOptionBtn.textContent === "FIND") {
+    
+        
         var giveSearchOption = document.querySelector('.give')
         giveSearchOption.style.display = "none"
 
@@ -54,15 +120,28 @@ var handleClick = function(evet){
         disposeSearchOption.style.display = "none"
 
         var findSearchOption = document.querySelector('.find')
+        var iconName = document.querySelector('.icon-name')
+        var iconBtn = document.querySelector('.icon-btn')
+        var allIconHome = document.querySelector('.all-home-icons')
+        
         //  debugger
         if (findSearchOption.style.display === "") {
         findSearchOption.style.display = "block"
+        // iconName.style.display = "block"
+        // iconBtn.style.display = "block"
+        allIconHome.style.display = "block"
         } else if (findSearchOption.style.display === "block") {
         findSearchOption.style.display = "none"
+        // iconName.style.display = "none"
+        // iconBtn.style.display = "none"
+        allIconHome.style.display = "none"
         } else if (findSearchOption.style.display === "none") {
         findSearchOption.style.display = "block"
+        // iconName.style.display = "block"
+        // iconBtn.style.display = "block"
+        allIconHome.style.display = "block"
         }
-
+    
     }
 
     if (homeOptionBtn.textContent === "DISPOSE") {
@@ -73,6 +152,9 @@ var handleClick = function(evet){
 
         var findSearchOption = document.querySelector('.find')
         findSearchOption.style.display = "none"
+
+        var allIconHome = document.querySelector('.all-home-icons')
+        allIconHome.style.display = "none"
         //  debugger
         if (disposeSearchOption.style.display === "") {
         disposeSearchOption.style.display = "block"
@@ -89,16 +171,3 @@ homeOptionBtn.forEach(function(optionBtn) {
     optionBtn.addEventListener('click', handleClick)
 })
 </script>
-
-
-<style>
-
-.home-option-btn {
-    background-color: red;
-  }
-
-.home-search-option {
-    display: none;
-}
-
-</style>
