@@ -413,6 +413,22 @@
       padding: 40px 20px 0 20px;
     }
   }
-  
-  
-  
+
+.listing-container {
+  padding: 16px;
+  text-align: left;
+  max-width: 800px;
+
+  margin: 0 auto;
+  background-color: white;
+  color: #109461;
+  margin: 30px auto;
+  padding: 20px;
+  border-style: none;
+  width: 80%; 
+
+}
+
+.listing-search {
+  display: flex;
+}

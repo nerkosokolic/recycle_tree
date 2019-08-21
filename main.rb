@@ -33,8 +33,8 @@ end
 also_reload File.expand_path(__dir__, "views/*")
 also_reload File.expand_path(__dir__, "models/*")
 
-get '/' do
-  erb :index
+get '/listing' do
+  erb :listing
 end
 
 get '/give_form' do
