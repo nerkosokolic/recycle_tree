@@ -49,7 +49,7 @@ after do
   ActiveRecord::Base.connection.close
 end
 
-get '/' do
+get '/messages' do
   erb :message
 end
 
