@@ -1,0 +1,335 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    color: #109461;
+    margin: 30px auto;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
+  }
+  
+  section {
+    margin: 0 0 15px 0;
+    width: 100%;
+    height: 400px;
+    
+  }
+  
+  .top-right {
+    padding: 20px;
+  
+  }
+  
+  #loginBtn {
+    padding: 10px;
+    top: 23px;
+    border: none;
+    background: none;
+    font-size: 0.9em;
+    position: absolute !important;
+    right: 50px;
+    color: #109461;
+  }
+  
+  #logoutBtn {
+    padding: 10px;
+    top: 25px;
+    border: none;
+    background: none;
+    font-size: 0.9em;
+    position: absolute;
+    right: 50px;
+    color: #a7a6a6;
+  
+  }
+  
+  #current-user {
+  
+    position: absolute;
+    top: 21px;
+    right: 128px;
+  }
+  
+  .signup {
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-image: url("https://images.unsplash.com/photo-1541377182189-74e4a4ea12e5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1408&q=800");
+  }
+  /* modal background */
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; /* Enable scroll if needed */
+    background-color: #62caa2;
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    background-color: white;
+    color: #109461;
+    margin: 15% auto; 
+    padding: 20px;
+    border-style: none;
+    width: 80%; 
+    max-width: 500px;
+  }
+  
+  .close {
+    color: #109461;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #109461;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .thumbnail {
+    display: inline-block;
+    padding: 10px 0;
+    width: 100%;
+    height: 200px;
+  }
+  
+  /* .thumbnail img {
+    object-fit: cover;
+    width: 100%;
+    height: 200px;
+  } */
+  
+  .column {
+    float: left;
+  }
+  
+  .left {
+    width: 50%;
+  }
+  
+  .right {
+    width: 50%;
+  }
+  
+  button {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1em;
+    background-color: #62caa2;
+    color: white; 
+    border-style: none;
+    padding: 6px;
+    border-radius: 3px;
+  
+  } 
+  
+  h2 {
+      color: #109461;
+  
+  }
+  header {
+   
+      font-family: 'Montserrat', sans-serif;
+      display: inline;
+  }
+  
+  header h1 {
+    color: #62caa2;
+    font-size: 3em;
+    margin: 50px 0 10px 0;
+    text-align: center !important;
+    letter-spacing: 1px;
+  }
+  
+  a {
+    color: #109461;
+    text-decoration: none;
+  }
+  
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  
+  }
+  
+  #topnav a:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    color: #109461 !important;
+  }
+  
+  #topnav a:link {
+    color: white;
+    transition: 1s;
+  }
+  #topnav a:visited {
+    text-decoration: none;
+    color: #62caa2;
+    transition: 1s;
+  }
+  
+  #topnav a:active {
+    color: #62caa2;
+  }
+  
+  #topnav {
+    background-color: #62caa2;
+  }
+  
+  #topnav a {
+    color: white !important;
+    text-decoration: none;
+    text-align: center;
+    padding: 15px;
+    display: block;
+    border-bottom: solid 1px #fff;
+  
+  }
+  .top-links a {
+    background-color: transparent !important;
+    color: #109461 !important;
+      
+  }
+  
+  .top-links {
+    background-color: transparent !important;
+    color: #109461 !important;
+    display: flex;
+    justify-content: flex-start;
+    
+  }
+  
+  p {
+    color: #109461;
+  }
+  
+  .small-p {
+    color: #109461;
+    font-size: 0.9em;
+  }
+  
+  input[type=text], input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+  }
+  
+  input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+  
+  hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+  }
+  
+  button:hover {
+    opacity:1;
+    color:#109461;
+  }
+  
+  .cancelbtn {
+    padding: 14px 20px;
+    background-color: #109461;
+    color: white;
+  }
+  .signupbtn {
+    padding: 14px 20px;
+    background-color: #62caa2;
+    /* border: solid 1px #f07e51; */
+    color: #109461;
+  }
+  #here {
+    color: #a7a6a6;
+  }
+  
+  .cancelbtn, .signupbtn {
+    float: left;
+    width: 50%;
+  }
+  
+  .container {
+    padding: 16px;
+    text-align: left;
+    max-width: 500px;
+  
+    margin: 0 auto;
+    background-color: white;
+    color: #109461;
+    margin: 30px auto;
+    padding: 20px;
+    border-style: none;
+    width: 80%; 
+    max-width: 500px;
+  
+  }
+  
+  .clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  @media screen and (max-width: 300px) {
+    .cancelbtn, .signupbtn {
+      width: 100%;
+    }
+  }
+  
+  
+  @media (min-width: 600px) {
+    .thumbnail {
+      display: inline-block;
+      width: 48%;
+      padding: 40px 20px 0 20px;
+    }
+  
+    #topnav ul {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+  
+      
+    #topnav li {
+      flex: 0 1 auto;
+    }
+  
+    #topnav a {
+      border: none;
+      padding: 20px;
+  
+    }
+  
+    #topnav li:first-child {
+        margin-right: auto;
+        
+    }
+  
+  }
+  
+  @media (min-width: 800px) {
+    .thumbnail {
+      display: inline-block;
+      width: 32%;
+      padding: 40px 20px 0 20px;
+    }
+  }
+  
+  
+  

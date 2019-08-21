@@ -2,12 +2,54 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Hello World</title>
+  <title>Recycle Tree</title>
   <link rel='stylesheet' href='/stylesheets/main.css'>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
 </head>
 <body>
+<header>
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Login</h2>
+    <form action="/session" method="post">
+    <label for="">email address</label>
+    <input type="text" name="email_address">
+    <label for="">password</label>
+    <input type="password" name="password">
+    <button>Login</button>
+    </form>
+    <p class="small-p">Don't have an account? Sign up <a id="here" href="/signup"><b>here<b>.</a></p>
+  </div>
+</div>
+ <% if logged_in? %> 
+  <div>
+    <p id="current-user" class="small-p"><%= current_user.username %></p>
+    <form action="/session" method="post">
+      <input type="hidden" name="_method" value="delete">
+      <button id="logoutBtn">Log Out</button>
+    </form>
+  </div>
+ <% else %> 
+  <div class="rop-right"> 
+   <button id="loginBtn">Sign Up / Login</button>
+  </div>
+<% end %> 
+<h1>Recycle Tree</h1>   
+</header>
+  <nav id="topnav">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/listings">Listings</a></li>
+       <% if logged_in? %> 
+        <li><a href="/account" id="myaccount">My Account</a></li>
+       <% end %> 
+    </ul>
+  </nav>
 
-  <%= yield %>
+<%= yield %>
 
+<script src="/javascripts/application.js"></script>
 </body>
 </html>
