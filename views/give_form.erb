@@ -1,0 +1,58 @@
+<%# listings.title, listings.category_id, listings.description.
+    users.username %>
+
+<div class="giveform">
+<form action="/listings" method="post">
+  <div class="container">
+    <p><b>Give Away Your Waste</p>
+
+    <label class="small-p" for="">Title</label>
+    <input type="text" name="title" required>
+
+    <label class="small-p" for="">Category</label>
+
+    <br>
+
+    <div class="custom-select">
+    <select>
+        <option value="automotive" name="category">Automotive</option>
+        <option value=construction" name="category">Construction</option>
+        <option value="electronics" name="category">Electronics</option>
+        <option value="glass" name="category">Glass</option>
+        <option value="metal" name="category">Metal</option>
+        <option value="paper" name="category">Paper</option>
+        <option value="plastic" name="category">Plastic</option>
+        <option value="hazardous" name="category">Hazardous</option>
+        <option value="organic" name="category">Organic</option>
+        <option value="household" name="category">Household</option>
+        <option value="packaging" name="category">Packaging</option>
+    </select>
+    </div>
+
+      <br>
+
+    <label class="small-p" for="">Description</b></label>
+    <input type="text" name="description" required>
+
+    <label class="small-p" for="">Image Link</b></label>
+    <input type="text" name="image_url" required>
+
+    <label class="small-p" for="">Pickup Address</b></label>
+    <input type="text" placeholder="We only share your address with the person taking your waste." name="street_address" required>
+
+     <label class="small-p" for="">Postcode</b></label>
+    <input type="text" placeholder="We only share your postcode with the person taking your waste."  name="post_code" required>
+
+    <label class="small-p" for="">Image link</b></label>
+    <input type="text" name="image_url" required>
+    
+    <br>
+
+
+    <div class="clearfix">
+      <button type="button" class="cancelbtn">Cancel</button>
+      <button type="submit" class="signupbtn">Preview</button>
+    </div>
+  </div>
+</form>
+</div>
