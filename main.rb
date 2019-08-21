@@ -50,7 +50,7 @@ after do
 end
 
 get '/' do
-  erb :index
+  erb :message
 end
 
 
