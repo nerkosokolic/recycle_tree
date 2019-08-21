@@ -34,15 +34,11 @@ also_reload File.expand_path(__dir__, "views/*")
 also_reload File.expand_path(__dir__, "models/*")
 
 
-
-
 require_relative 'routes/account'
 require_relative 'routes/comment'
 require_relative 'routes/listing'
 require_relative 'routes/message'
 require_relative 'routes/session'
-
-
 
 
 after do
@@ -52,6 +48,7 @@ end
 get '/' do
   erb :index
 end
+
 
 
 

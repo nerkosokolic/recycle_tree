@@ -84,7 +84,7 @@
     width: 100%; 
     height: 100%; 
     overflow: auto; /* Enable scroll if needed */
-    background-color: #62caa2;
+    background-color: #62caa280;
   }
   
   /* Modal Content */
