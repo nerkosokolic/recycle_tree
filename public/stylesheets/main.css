@@ -66,6 +66,10 @@ input[type=text].home-search-location {
 .all-home-icons {
   display: none;
 }
+
+.listing-picture img {
+  max-width: 200px;
+}
   
   .top-right {
     padding: 20px;

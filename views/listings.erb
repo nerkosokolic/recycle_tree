@@ -1,72 +1,17 @@
-
-
-<div class="listing-container">
-    <div class="listing-search">
-        <input type="text" name="search" value = "<%= @search_term %>">
-        <input type="text" name="location" value = "<%= @location %>">
-        <button>Search</button>
-    </div>
-    <div>
-            <div class='home-icons'>
-                <div class="home-search-option icon-name">Automotive</div>
-               <a href="/listings"> <img class="home-search-option icon-btn" src="/images/car.png" alt=""></a>
-            </div>
-
-            <div class='home-icons'>
-                <div class="home-search-option icon-name">Construction</div>
-                <a href="/listings"><img class="home-search-option icon-btn" src="/images/construction.png" alt=""></a>
-            </div>
-
-            <div class='home-icons'>
-                <div class="home-search-option icon-name">Electronics</div>
-                <a href="/listings"><img class="home-search-option icon-btn" src="/images/electronics.png" alt=""></a>
-            </div>
-
-            <div class='home-icons'>
-                <div class="home-search-option icon-name">Glass</div>
-                <a href="/listings"><img class="home-search-option icon-btn" src="/images/glass.png" alt=""></a>
-            </div>
-
-            <div class='home-icons'>
-                <div class="home-search-option icon-name">Hazardous</div>
-                <a href="/listings"><img class="home-search-option icon-btn" src="/images/hazardous.png" alt=""></a>
-            </div>
-
-            <div class='home-icons'>
-                <div class="home-search-option icon-name">Household</div>
-                <a href="/listings"><img class="home-search-option icon-btn" src="/images/household.png" alt=""></a>
-            </div>
-
-            <div class='home-icons'>
-                <div class="home-search-option icon-name">Metal</div>
-                <a href="/listings"><img class="home-search-option icon-btn" src="/images/metal.png" alt=""></a>
-            </div>
-
-            <div class='home-icons'>
-                <div class="home-search-option icon-name">Organic Waste</div>
-                <a href="/listings"><img class="home-search-option icon-btn" src="/images/organic-waste.png" alt=""></a>
-            </div>
-
-            <div class='home-icons'>
-                <div class="home-search-option icon-name">Packaging</div>
-                <a href="/listings"><img class="home-search-option icon-btn" src="/images/packaging.png" alt=""></a>
-            </div>
-
-            <div class='home-icons'>
-                <div class="home-search-option icon-name">Paper</div>
-                <a href="/listings"><img class="home-search-option icon-btn" src="/images/paper.png" alt=""></a>
+<% @listings.each do |listing| %>
+    <div class="listing-container">
+        <div class="listing-id">
+            <div class="listing-picture"><img src="<%= listing.image_url %>" alt=""></div>
+            <div>
+                <h2><%= listing.title %></h2>
+                <p>
+                <%= listing.description %>
+                </p>
+                <div class=listing-footer>
+                    <span>Created: <%= listing.date_created %></span>
+                    <button>View</button>
+                </div>
             </div>
         </div>
-    <div class="listing-id">
-    <div class="listing-picture">Picture</div>
-    <div>
-        <h2>Listing ID#1</h2>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, vel incidunt! Necessitatibus qui maxime ullam ratione cumque exercitationem expedita distinctio hic, corporis laudantium quae ex possimus, at id officiis aspernatur!
-        </p>
-        <div class=listing-footer>
-        <span>Created: 12:34pm 24/04/2019</span>
-        <button>View</button>
-        </div>
     </div>
-    </div>
-</div>
+<% end %>
