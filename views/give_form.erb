@@ -2,19 +2,19 @@
     users.username %>
 
 <div class="giveform">
-<form action="/listings" method="post">
+<form action="/give_preview" method="get">
   <div class="container">
     <p><b>Give Away Your Waste</p>
 
     <label class="small-p" for="">Title</label>
-    <input type="text" name="title" required>
+    <input type="text" name="title" value = "<%= @search_term %>">
 
     <label class="small-p" for="">Category</label>
 
     <br>
 
     <div class="custom-select">
-    <select>
+    <select name="category">
         <option value="automotive" name="category">Automotive</option>
         <option value=construction" name="category">Construction</option>
         <option value="electronics" name="category">Electronics</option>
@@ -34,8 +34,6 @@
     <label class="small-p" for="">Description</b></label>
     <input type="text" name="description" required>
 
-    <label class="small-p" for="">Image Link</b></label>
-    <input type="text" name="image_url" required>
 
     <label class="small-p" for="">Pickup Address</b></label>
     <input type="text" placeholder="We only share your address with the person taking your waste." name="street_address" required>
