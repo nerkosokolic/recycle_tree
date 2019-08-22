@@ -12,6 +12,17 @@ post '/sessions' do
   end
 end
 
+post '/signup' do
+  user = User.new
+  user.email = params[:email]
+  user.username = params[:username]
+  user.mobile_number = params[:mobile]
+  user.password_digest = params[:password]
+  user.save
+  session[:user_id] = user.id
+  redirect '/'
+end
+
 delete '/sessions' do
   session[:user_id] = nil
   redirect '/'
