@@ -2,11 +2,8 @@ get '/show' do
     erb :show
 end
 
-get '/listings' do
-    @search_term = params[:item]
-    @location = params[:location]
-    @category = params[:category]
-    erb :listings
+get '/listing' do
+    erb :listing
 end
 
 get '/give_success' do
@@ -30,4 +27,3 @@ end
 post '/listings' do
     redirect '/give_success'
 end
-

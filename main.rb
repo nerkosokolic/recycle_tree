@@ -1,13 +1,9 @@
-require 'pry'
 require 'sinatra'
 require 'sinatra/reloader' if development?
 require_relative 'database_config'
-<<<<<<< HEAD
 require 'bcrypt'
 
 
-=======
->>>>>>> adding seeding file
 require_relative 'models/business'
 require_relative 'models/category'
 require_relative 'models/comment'
@@ -54,8 +50,3 @@ end
 get '/' do
   erb :index
 end
-
-
-
-
-

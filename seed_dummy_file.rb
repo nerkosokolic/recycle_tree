@@ -78,10 +78,18 @@ end
     new_listing.street_address = ["13 Sake Street", "50 Mulge Drive", "9 Grove Street","23 Alton Road","9 Pakes Avenue"].sample
     new_listing.postcode = ["3000","4000","3000","6000","2000","3000"].sample
     new_listing.image_url = ["https://prod-media.coolaustralia.org/wp-content/uploads/2015/08/06194127/cherries-768x510.jpg","https://prod-media.coolaustralia.org/wp-content/uploads/2012/11/06211424/waste5.jpg","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2IwJMhPg6OFn2SxEmHU8soOg_s7fx5FWGsM-akrbbGa7nOitY0Q","https://www.abc.net.au/radionational/image/6552704-3x2-700x467.jpg","https://cdn.newsapi.com.au/image/v1/c6530928a0bed6f0cfc844a83af0528b","https://www.biome.com.au/blog/wp-content/uploads/shutterstock_160161059.jpg"].sample
-
     new_listing.save
 end
 
 # --------------------------
 
 # seeding messages
+
+10.times do
+    new_user = User.new
+    new_user.username = (0...8).map { (65 + rand(26)).chr }.join
+    new_user.email = "#{ (0...8).map { (65 + rand(26)).chr }.join }.#{  (0...8).map { (65 + rand(26)).chr }.join  }#{rand(252...4350)}@#{["Google.com","Yahoo.com","AOL.com"].sample}"
+    new_user.password_digest = (0...10).map {rand(0...9) }.join
+    new_user.mobile_number = (0...10).map {rand(0...9) }.join
+    new_user.save
+end    
