@@ -2,8 +2,8 @@ get '/show' do
     erb :show
 end
 
-get '/listings' do
-    erb :listings
+get '/listing' do
+    erb :listing
 end
 
 get '/give_success' do
