@@ -1,6 +1,7 @@
 require 'sinatra'
 require 'sinatra/reloader' if development?
 require_relative 'database_config'
+require 'bcrypt'
 
 
 require_relative 'models/business'
@@ -49,10 +50,6 @@ end
 get '/' do
   erb :index
 end
-
-
-
-
 
 
 
