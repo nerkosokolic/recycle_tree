@@ -5,12 +5,12 @@
     <button class="home-option-btn">GIVE</button>
     <button class="home-option-btn">FIND</button>
     <button class="home-option-btn">DISPOSE</button>
-    <form class="home-search-option give" action="/sessions" method="post">
+    <form class="home-search-option give" action="/give_form" method="get">
         <label for="">give</label>
         <input class="home-search" type="text" name="item" placeholder="item">
         <button class="home-search-btn">search</button>
     </form>
-    <form class="home-search-option find" action="/sessions" method="post">
+    <form class="home-search-option find" action="/listings" method="post">
         <label for="">find</label>
         <input class="home-search" type="text" name="item" placeholder="item">
         <input class="home-search-location" type="text" name="location" placeholder="location">
