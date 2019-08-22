@@ -35,10 +35,6 @@ input[type=text].home-search-location {
   padding-top: 100px;
 }
 
-.home-option-btn {
-    /* background-color: #109461; */
-}
-
 .home-search-option {
     display: none;
     text-align: center;
@@ -582,7 +578,7 @@ input[type=text].home-search-location {
 
 .messages-aside {
   height: 50px;
-  width: 33%;
+  width: 25%;
   margin: 0;
 }
 
@@ -591,7 +587,7 @@ input[type=text].home-search-location {
 }
 
 .messages-body {
-  width: 66%;
+  width: 75%;
   margin: 0;
   padding: 0;
   border-left: 2px solid black;
