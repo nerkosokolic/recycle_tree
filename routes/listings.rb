@@ -5,7 +5,7 @@ end
 get '/listings' do
     @search_term = params[:item]
     @location = params[:location]
-    # @category = params[:category]
+    @listings = Listing.all
     erb :listings
 end
 
