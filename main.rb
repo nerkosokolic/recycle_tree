@@ -1,4 +1,3 @@
-require 'pry'
 require 'sinatra'
 require 'sinatra/reloader' if development?
 require_relative 'database_config'
@@ -51,8 +50,3 @@ end
 get '/' do
   erb :index
 end
-
-
-
-
-
