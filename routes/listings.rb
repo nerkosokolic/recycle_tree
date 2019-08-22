@@ -2,8 +2,11 @@ get '/show' do
     erb :show
 end
 
-get '/listing' do
-    erb :listing
+get '/listings' do
+    @search_term = params[:item]
+    @location = params[:location]
+    # @category = params[:category]
+    erb :listings
 end
 
 get '/give_success' do
