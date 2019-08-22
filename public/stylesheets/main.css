@@ -67,6 +67,60 @@ input[type=text].home-search-location {
   display: none;
 }
 
+.take_btn {
+  padding: 14px 20px;
+  background-color: orange;
+  color: white;
+  width: 50%;
+}
+
+.comments-form {
+  display: inline-flex;
+}
+
+.comments-form textarea {
+  margin-right: 10px;
+}
+
+.comments-form button {
+  align-self: center;
+  /* border-radius: 5px; */
+}
+
+.comments {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-top: 5px;
+}
+
+.comments .small-p  {
+  margin-left: 10px;
+}
+
+.comment-reply-btn {
+  font-size: 12px;
+  border-radius: 5px;
+  padding: 3px;
+  margin-right: auto;
+  margin-left: 10px;
+  color: grey;
+  border: 1px solid grey;
+  background-color: #f1f1f1;
+  
+}
+
+.message-form textarea {
+  display: block;
+  min-width: 25vw;
+  min-height: 10vh;
+  margin-bottom: 10px;
+}
+
+.message-form button {
+  margin-bottom: 20px;
+}
+
 .listing-picture img {
   max-width: 200px;
 }
