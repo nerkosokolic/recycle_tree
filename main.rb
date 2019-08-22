@@ -45,6 +45,11 @@ after do
   ActiveRecord::Base.connection.close
 end
 
+get '/' do
+  erb :index
+end
+
+
 get '/messages' do
   erb :message
 end
