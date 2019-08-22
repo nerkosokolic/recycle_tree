@@ -69,12 +69,16 @@ end
 
 200.times do
     new_listing = Listing.new
-    new_listing.title = 
-    new_listing.title = 
-    new_listing.title = 
-    new_listing.title = 
-    new_listing.title = 
-    new_listing.title = 
+    new_listing.title = Household.sample
+    new_listing.category_id = categories.sample
+    new_listing.description = ["Really good condition","Horrible! Need to get rid of ASAP!", "OK condition"].sample
+    new_listing.user_id = rand(0...11)
+    new_listing.date_created = Time.now
+    new_listing.last_updated = Time.now
+    new_listing.street_address = ["13 Sake Street", "50 Mulge Drive", "9 Grove Street","23 Alton Road","9 Pakes Avenue"].sample
+    new_listing.postcode = ["3000","4000","3000","6000","2000","3000"].sample
+    new_listing.image_url = ["https://prod-media.coolaustralia.org/wp-content/uploads/2015/08/06194127/cherries-768x510.jpg","https://prod-media.coolaustralia.org/wp-content/uploads/2012/11/06211424/waste5.jpg","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2IwJMhPg6OFn2SxEmHU8soOg_s7fx5FWGsM-akrbbGa7nOitY0Q","https://www.abc.net.au/radionational/image/6552704-3x2-700x467.jpg","https://cdn.newsapi.com.au/image/v1/c6530928a0bed6f0cfc844a83af0528b","https://www.biome.com.au/blog/wp-content/uploads/shutterstock_160161059.jpg"].sample
+
     new_listing.save
 end
 
