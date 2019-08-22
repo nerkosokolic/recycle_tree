@@ -1,3 +1,3 @@
-get '/maps' do
-    erb :maps
+get '/map' do
+    erb :map
 end
