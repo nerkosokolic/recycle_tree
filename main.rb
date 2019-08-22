@@ -39,6 +39,7 @@ require_relative 'routes/comments'
 require_relative 'routes/listings'
 require_relative 'routes/messages'
 require_relative 'routes/sessions'
+require_relative 'routes/maps'
 
 
 after do
@@ -50,9 +51,7 @@ get '/' do
 end
 
 
-get '/messages' do
-  erb :message
-end
+
 
 
 
