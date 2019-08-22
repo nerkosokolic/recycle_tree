@@ -9,7 +9,9 @@
                 </p>
                 <div class=listing-footer>
                     <span>Created: <%= listing.date_created %></span>
-                    <button>View</button>
+                    <form action="/listings/<%= listing.id %>">
+                        <button type="submit">View</button>
+                    </form>
                 </div>
             </div>
         </div>

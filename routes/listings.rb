@@ -9,6 +9,18 @@ get '/listings' do
     erb :listings
 end
 
+get '/listings/:id' do
+    @listing = Listing.find(params[:id])
+    @category = Category.find(@listing.category_id)
+    @comments = Comment.where(listing_id: params[:id])
+    @user = User
+    erb :item
+end
+
+get '/listings/:id/taken' do
+    erb :taken
+end
+
 get '/give_success' do
     erb :give_success
 end

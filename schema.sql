@@ -31,7 +31,8 @@ CREATE TABLE "messages" (
   "listing_id" int,
   "user_id" int,
   "responder_id" int,
-  "message_read" boolean
+  "message_read" boolean,
+  "body" text
 );
 
 CREATE TABLE "comments" (

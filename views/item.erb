@@ -1,0 +1,67 @@
+<div class="giveform">
+    <div class="container">
+
+        <p>Title</p>
+        <p class="small-p"><%= @listing.title %></p>
+        <p>Category</p>
+        <p class="small-p"><%= @category.title %></p>
+        <p>Description</p>
+        <p class="small-p"><%= @listing.description %></p>
+
+        <img class="listing-img" src="<%= @listing.image_url %>" alt="">
+
+        <div class="clearfix">
+            <form action="/listings/<%=params[:id]%>/taken">
+                <button type="submit" class="take_btn">Take</button>
+            </form>
+        </div>
+
+        <p>Have a question?</p>
+
+        <form class="comments-form" action="/comments" method="post">
+        <textarea name="body"></textarea>
+        <input type="hidden" name="listing_id" value="<%= @listing.id %>">
+        <button>post comment</button>
+        </form>
+
+        <% @comments.each do |comment| %>
+        <div>
+            <div class="comments">
+                <div><%= @user.find(comment.user_id).username %></div>
+                <div class="small-p"><%= comment.body%></div> 
+                <button class="comment-reply-btn">reply</button>
+            </div>
+        </div>
+        <% end %>
+
+    </div>
+</div>
+
+<script>
+var replyBtns = document.querySelectorAll('.comment-reply-btn')
+
+var reply = event => {
+    console.log('working')
+    var replyBtnClicked = event.target
+    // debugger
+    var question = replyBtnClicked.parentElement.parentElement
+    var div = document.createElement('div')
+    div.className = "comments"
+    question.appendChild(div)
+    var input = document.createElement('input')
+    input.type = "text"
+    input.className = "comments-reply"
+    input.name = "item"
+    div.appendChild(input)
+    var button = document.createElement('button')
+    button.className = "comment-reply-btn"
+    button.textContent = "reply"
+    div.appendChild(button)
+
+}
+
+replyBtns.forEach( replyBtn => {
+    replyBtn.addEventListener('click', reply)
+})
+
+</script>
