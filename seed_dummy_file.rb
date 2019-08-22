@@ -37,7 +37,6 @@ categories = ["Automotive",
 "Glass",
 "Metal",
 "Paper",
-"Plastic",
 "Hazardous",
 "Organic",
 "Household",
@@ -58,21 +57,21 @@ end
     new_user.username = (0...8).map { (65 + rand(26)).chr }.join
     new_user.email = "#{ (0...8).map { (65 + rand(26)).chr }.join }.#{  (0...8).map { (65 + rand(26)).chr }.join  }#{rand(252...4350)}@#{["Google.com","Yahoo.com","AOL.com"].sample}"
     new_user.password_digest = (0...10).map {rand(0...9) }.join
-    new_user.mobile_number = (0...10).map {rand(0...9) }.join
+    new_user.mobile_number = (0...9).map {rand(0...9) }.join
     new_user.save
 end    
 
 
-# --------------------------
+# # --------------------------
 
-# seeding listings
+# # seeding listings
 
 200.times do
     new_listing = Listing.new
     new_listing.title = Household.sample
-    new_listing.category_id = categories.sample
+    new_listing.category_id = rand(1...11)
     new_listing.description = ["Really good condition","Horrible! Need to get rid of ASAP!", "OK condition"].sample
-    new_listing.user_id = rand(0...11)
+    new_listing.user_id = rand(1...11)
     new_listing.date_created = Time.now
     new_listing.last_updated = Time.now
     new_listing.street_address = ["13 Sake Street", "50 Mulge Drive", "9 Grove Street","23 Alton Road","9 Pakes Avenue"].sample
@@ -81,15 +80,24 @@ end
     new_listing.save
 end
 
-# --------------------------
+# # --------------------------
 
-# seeding messages
+# # seeding messages
 
 10.times do
-    new_user = User.new
-    new_user.username = (0...8).map { (65 + rand(26)).chr }.join
-    new_user.email = "#{ (0...8).map { (65 + rand(26)).chr }.join }.#{  (0...8).map { (65 + rand(26)).chr }.join  }#{rand(252...4350)}@#{["Google.com","Yahoo.com","AOL.com"].sample}"
-    new_user.password_digest = (0...10).map {rand(0...9) }.join
-    new_user.mobile_number = (0...10).map {rand(0...9) }.join
-    new_user.save
+    new_msg = Message.new
+    new_msg.listing_id = rand(1...160)
+    new_msg.user_id = rand(1...4)
+    new_msg.responder_id = rand(5...9)
+    new_msg.message_read = true
+    new_msg.save
+end    
+
+3.times do
+    new_bus = Business.new
+    new_bus.business_name = ["Bob's Cleaning","Visy","Sims Recycling"].sample
+    new_bus.street_address = ['100 Howl Street','34 Industry Drive','9 Plumping Drive'].sample
+    new_bus.postcode = ["3000","4000"].sample
+    new_bus.category_id = rand(2...5)
+    new_bus.save
 end    
