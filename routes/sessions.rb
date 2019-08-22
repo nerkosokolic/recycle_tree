@@ -8,7 +8,7 @@ post '/sessions' do
     session[:user_id] = user.id 
     redirect "/"
   else
-    raise 'sjdksdkjkldas'
+    nil
   end
 end
 
