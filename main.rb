@@ -7,7 +7,8 @@ require 'bcrypt'
 
 require_relative 'models/business'
 require_relative 'models/category'
-require_relative 'models/comment'
+require_relative 'models/answer'
+require_relative 'models/question'
 require_relative 'models/listing'
 require_relative 'models/message'
 require_relative 'models/user'
@@ -37,7 +38,7 @@ also_reload File.expand_path(__dir__, "models/*")
 
 
 require_relative 'routes/accounts'
-require_relative 'routes/comments'
+require_relative 'routes/questions'
 require_relative 'routes/listings'
 require_relative 'routes/messages'
 require_relative 'routes/sessions'
