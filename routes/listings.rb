@@ -1,3 +1,4 @@
+
 get '/show' do
     erb :show
 end
@@ -5,7 +6,7 @@ end
 get '/listings' do
     @search_term = params[:item]
     @location = params[:location]
-    @listings = Listing.all
+    @listings = Category.find_by(title: params[:category]).listings
     erb :listings
 end
 
