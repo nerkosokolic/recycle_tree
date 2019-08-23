@@ -5,8 +5,20 @@ end
 get '/listings' do
     @search_term = params[:item]
     @location = params[:location]
-    # @category = params[:category]
+    @listings = Listing.all
     erb :listings
+end
+
+get '/listings/:id' do
+    @listing = Listing.find(params[:id])
+    @category = Category.find(@listing.category_id)
+    @comments = Comment.where(listing_id: params[:id])
+    @user = User
+    erb :item
+end
+
+get '/listings/:id/taken' do
+    erb :taken
 end
 
 get '/give_success' do
