@@ -1,17 +1,27 @@
 <div class="home-section">
     <div class="intro">
-        I want to
+        <%# I want to %>
     </div>
-    <button class="home-option-btn">GIVE</button>
-    <button class="home-option-btn">FIND</button>
-    <button class="home-option-btn">DISPOSE</button>
+    <div class="home-thumbnail">
+        <img src="https://www.dbs.com/livemore/uploads/recycle/recyclemorewasteless.jpg" alt="">
+        <button class="home-option-btn"><b><a href="/give_form">GIVE</a></button>
+    </div>
+    <div class="home-thumbnail">
+        <img src="https://1118926.v1.pressablecdn.com/wp-content/uploads/2016/01/pebworth-in-pile.jpg" alt="">
+        
+        <button class="home-option-btn"><b>FIND</button>
+    </div>
+    <div class="home-thumbnail">
+        <img src="https://media.istockphoto.com/photos/recycling-centre-sign-clear-blue-sky-picture-id174672861?k=6&m=174672861&s=612x612&w=0&h=67fB9N8gMhHxvb1v0BYB9qib_HxXe6xP1-3VypRn53A=" alt="">
+        <button class="home-option-btn"><b>DISPOSE</button>
+    </div>
     <form class="home-search-option give" action="/give_form" method="get">
-        <label for="">give</label>
+        <label for=""></label>
         <input class="home-search" type="text" name="item" placeholder="item">
         <button class="home-search-btn">search</button>
     </form>
     <form class="home-search-option find" action="/listings" method="get">
-        <label for="">find</label>
+        <label for=""></label>
         <input class="home-search" type="text" name="item" placeholder="item">
         <input class="home-search-location" type="text" name="location" placeholder="location">
         <button class="home-search-btn">search</button>
@@ -71,7 +81,7 @@
         </div>
     </div>
         <form class="home-search-option dispose" action="/map" method="get">
-            <label for="">dispose</label>
+            <label for=""></label>
             <input class="home-search" type="text" name="item" placeholder="item">
             <input class="home-search-location" type="text" name="location" placeholder="location">
             <button class="home-search-btn">search</button>

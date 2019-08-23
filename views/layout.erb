@@ -36,13 +36,15 @@
    <button id="loginBtn">Sign Up / Login</button>
   </div>
 <% end %> 
-<h1>Recycle Tree</h1>   
+<%# <img id="logo" src="/images/Blue Outline Recycling Symbol.png" alt=""> %>
+<h1>Recycle Connect</h1>   
 </header>
   <nav id="topnav">
     <ul>
       <li><a href="/">Home</a></li>
       <li><a href="/about">About</a></li>
       <li><a href="/listings">Listings</a></li>
+      <%# <li><a href="" id="loginBtn">Login</a></li> %>
        <% if logged_in? %> 
         <li><a href="/my_account" id="myaccount">My Account</a></li>
        <% end %> 

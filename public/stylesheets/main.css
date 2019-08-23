@@ -1,9 +1,22 @@
+:root {
+/* --primary-color: #ff9900; 
+--secondary-color: #88c6da; */
+--primary-color: #18b657;
+--secondary-color: #5cd360;
+--medium-grey-color: #a7a6a6; 
+
+}
+
 * {
     box-sizing: border-box;
   }
+
+#logo {
+    width: 80px;
+}
   
   body {
-    color: #109461;
+    color: var(--primary-color);
     margin: 30px auto;
     font-family: 'Montserrat', sans-serif;
     letter-spacing: 1px;
@@ -17,7 +30,7 @@
   }
 
 .intro {
-  padding: 0 0 20px;
+  padding: 0 0 4px 0;
 }
 
 input[type=text].home-search {
@@ -32,7 +45,7 @@ input[type=text].home-search-location {
 
 .home-section {
   text-align: center;
-  padding-top: 100px;
+
 }
 
 .home-search-option {
@@ -50,11 +63,16 @@ input[type=text].home-search-location {
   background-color: #f1f1f1;
 }
 
+.home-thumbnail:hover {
+    /* transform: translateY(10px);  */
+    /* box-shadow: 0px 0px 8px lightgrey; */
+}
+
 .icon-name {
   font-size: 1vw;
   display: block;
   text-align: center;
-  color: #0c8cb7;
+  color: var(--secondary-color);
 }
 
 .icon-btn {
@@ -130,28 +148,6 @@ input[type=text].home-search-location {
   
   }
   
-  #loginBtn {
-    padding: 10px;
-    top: 23px;
-    border: none;
-    background: none;
-    font-size: 0.9em;
-    position: absolute !important;
-    right: 50px;
-    color: #109461;
-  }
-  
-  #logoutBtn {
-    padding: 10px;
-    top: 25px;
-    border: none;
-    background: none;
-    font-size: 0.9em;
-    position: absolute;
-    right: 50px;
-    color: #a7a6a6;
-  
-  }
   
   #current-user {
   
@@ -193,13 +189,13 @@ input[type=text].home-search-location {
     width: 100%; 
     height: 100%; 
     overflow: auto; /* Enable scroll if needed */
-    background-color: #62caa280;
+    background-color: rgba(128, 128, 128, 0.434);
   }
   
   /* Modal Content */
   .modal-content {
     background-color: white;
-    color: #109461;
+    color: var(--primary-color);
     margin: 15% auto; 
     padding: 20px;
     border-style: none;
@@ -208,7 +204,7 @@ input[type=text].home-search-location {
   }
   
   .close {
-    color: #109461;
+    color: var(--primary-color);
     float: right;
     font-size: 28px;
     font-weight: bold;
@@ -216,7 +212,7 @@ input[type=text].home-search-location {
   
   .close:hover,
   .close:focus {
-    color: #109461;
+    color: var(--primary-color);
     text-decoration: none;
     cursor: pointer;
   }
@@ -224,15 +220,46 @@ input[type=text].home-search-location {
   .thumbnail {
     display: inline-block;
     padding: 10px 0;
-    width: 100%;
+    width: 28%;
     height: 200px;
   }
+
+  .home-thumbnail {
+    display: inline-block;
+    padding: 10px 0;
+    width: 100%;
+    height: 200px;
+    position: relative;
+
+  }
   
-  /* .thumbnail img {
+  .home-thumbnail img {
     object-fit: cover;
     width: 100%;
     height: 200px;
-  } */
+    opacity: 0.7;
+  }
+
+  .home-thumbnail button {
+      position: absolute;
+      bottom: 3px;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 6px 20px;
+      background-color: white;
+      font-size: 1.2em;
+      font-weight: 500;
+      color: var(--primary-color);
+      /* border-style: solid 1px var(--primary-color); */
+      border-style: ridge 4px grey;
+      border-radius: 3px;
+      box-shadow: 1px 1px 2px 0px rgba(128,128,128,1);
+ 
+  }
+  .home-thumbnail button:hover {
+   /* transform: translateY(5px);  */
+   padding: 8px 22px;
+  }
   
   .column {
     float: left;
@@ -249,27 +276,69 @@ input[type=text].home-search-location {
   button {
     font-family: 'Montserrat', sans-serif;
     font-size: 1em;
-    background-color: #62caa2;
+    background-color: var(--secondary-color);
     color: white; 
-    border-style: none;
+    /* border-style: none; */
     padding: 6px;
     /* border-radius: 3px; */
   } 
 
+    #loginBtn {
+    padding: 10px;
+    top: 23px;
+    border: none;
+    background: none;
+    font-size: 0.9em;
+    position: absolute !important;
+    right: 50px;
+    color: var(--primary-color);
+  }  
+
+  /* #loginBtn {
+    padding: 10px;
+    top: 23px;
+    border: none;
+    background: none;
+    font-size: 0.9em;
+    position: absolute !important;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  } */
+  
+  
+  #logoutBtn {
+    padding: 10px;
+    top: 25px;
+    border: none;
+    background: none;
+    font-size: 0.9em;
+    position: absolute;
+    right: 50px;
+    color: var(--medium-grey-color);
+  
+  }
+
+
   
   
   h2 {
-      color: #109461;
+      color: var(--primary-color);
   
   }
   header {
    
       font-family: 'Montserrat', sans-serif;
       display: inline;
+    
+      background-image: url("http://www.estrategiaods.org.br/wp-content/uploads/2017/11/coleta-seletiva-lixo-reciclavel-sp-01.jpg");
+      background-position: center; 
+      background-repeat: no-repeat; 
+      background-size: cover;
+      
   }
   
   header h1 {
-    color: #62caa2;
+    color: var(--primary-color);
     font-size: 3em;
     margin: 50px 0 10px 0;
     text-align: center !important;
@@ -277,7 +346,7 @@ input[type=text].home-search-location {
   }
   
   a {
-    color: #109461;
+    color: var(--primary-color);
     text-decoration: none;
   }
   
@@ -291,56 +360,56 @@ input[type=text].home-search-location {
   
   #topnav a:hover {
     background-color: rgba(255, 255, 255, 0.3);
-    color: #109461 !important;
+    color: var(--primary-color) !important;
   }
   
   #topnav a:link {
     color: white;
-    transition: 1s;
+    transition: 0.5s;
   }
   #topnav a:visited {
     text-decoration: none;
-    color: #62caa2;
-    transition: 1s;
+    color: var(--secondary-color);
+    transition: 0.5s;
   }
   
   #topnav a:active {
-    color: #62caa2;
+    color: var(--secondary-color);
   }
   
   #topnav {
-    background-color: #62caa2;
+    background-color: var(--secondary-color);
   }
   
   #topnav a {
     color: white !important;
     text-decoration: none;
     text-align: center;
-    padding: 15px;
+    padding: 10px;
     display: block;
     border-bottom: solid 1px #fff;
   
   }
   .top-links a {
     background-color: transparent !important;
-    color: #109461 !important;
+    color: var(--primary-color) !important;
       
   }
   
   .top-links {
     background-color: transparent !important;
-    color: #109461 !important;
+    color: var(--primary-color) !important;
     display: flex;
     justify-content: flex-start;
     
   }
   
   p {
-    color: #109461;
+    color: var(--primary-color);
   }
   
   .small-p {
-    color: grey;
+    color: var(--medium-grey-color);
     font-size: 0.9em;
   }
   
@@ -396,7 +465,7 @@ input[type=text].home-search-location {
       
       /* style the items (options), including the selected item: */
       .select-items div,.select-selected {
-        color: grey;
+        color: var(--medium-grey-color);
         padding: 8px 16px;
         border: 1px solid transparent;
         border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
@@ -432,23 +501,24 @@ input[type=text].home-search-location {
   }
   
   button:hover {
-    opacity:1;
-    color:#109461;
+    color: var(--primary-color);
+    box-shadow: 1px 1px 3px 0px var(--secondary-color);
+
   }
   
   .cancelbtn {
     padding: 14px 20px;
-    background-color: #109461;
+    background-color: var(--primary-color);
     color: white;
   }
   .signupbtn {
     padding: 14px 20px;
-    background-color: #62caa2;
+    background-color: var(--secondary-color);
     /* border: solid 1px #f07e51; */
-    color: #109461;
+    color: var(--primary-color);
   }
   #here {
-    color: #a7a6a6;
+    color: var(--medium-grey-color);
   }
   
   .cancelbtn, .signupbtn {
@@ -468,7 +538,7 @@ input[type=text].home-search-location {
 
   .subheading {
       text-align: center;
-      background-color: #62caa2;
+      background-color: var(--secondary-color);
       max-width: 500px;
       padding: 1px 0 1px 0;
       margin: 20px auto;
@@ -484,7 +554,7 @@ input[type=text].home-search-location {
   
     margin: 0 auto;
     background-color: white;
-    color: #109461;
+    color: var(--primary-color);
     margin: 30px auto;
     padding: 20px;
     border-style: none;
@@ -525,6 +595,25 @@ input[type=text].home-search-location {
       width: 48%;
       padding: 40px 20px 0 20px;
     }
+
+    header h1 {
+        margin: 50px 0 20px 0;
+    
+      }
+
+    .home-section {
+        padding-top: 80px;
+      }
+
+    .home-thumbnail {
+        display: inline-block;
+        padding: 10px 0;
+        width: 32%;
+        height: 200px;
+        position: relative;
+    
+      }
+
   
     #topnav ul {
       display: flex;
@@ -539,7 +628,7 @@ input[type=text].home-search-location {
   
     #topnav a {
       border: none;
-      padding: 20px;
+      padding: 11px;
   
     }
   
@@ -556,6 +645,8 @@ input[type=text].home-search-location {
       width: 32%;
       padding: 40px 20px 0 20px;
     }
+
+
   }
 
 .listing-container {
@@ -565,7 +656,7 @@ input[type=text].home-search-location {
 
   margin: 0 auto;
   background-color: white;
-  color: #109461;
+  color: var(--primary-color);
   margin: 30px auto;
   padding: 20px;
   border-style: none;
