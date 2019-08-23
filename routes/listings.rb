@@ -6,7 +6,15 @@ end
 get '/listings' do
     @search_term = params[:item]
     @location = params[:location]
-    @listings = Category.find_by(title: params[:category]).listings
+
+    if params[:category] 
+        @listings = Category.find_by(title: params[:category]).listings
+    # elsif 
+    #     params[:item]
+    #     @listings = Category.
+    else 
+        @listings = Listing.all
+    end 
     erb :listings
 end
 
