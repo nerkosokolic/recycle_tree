@@ -43,20 +43,12 @@ CREATE TABLE "businesses" (
   "category_id" int
 );
 
-CREATE TABLE "questions" (
+CREATE TABLE "comments" (
   "id" SERIAL PRIMARY KEY,
   "listing_id" int,
   "user_id" int,
   "body" text,
   "date_created" timestamp,
-  "question_read" boolean
-);
-
-CREATE TABLE "answers" (
-  "id" SERIAL PRIMARY KEY,
-  "listing_id" int,
-  "user_id" int,
-  "body" text,
-  "date_created" timestamp,
-  "answer_read" boolean
+  "question_read" boolean,
+  "comment_type" VARCHAR(50)
 );

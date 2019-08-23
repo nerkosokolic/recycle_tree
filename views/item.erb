@@ -25,22 +25,23 @@
         </form>
 
 
-        <%# @comments.each do |comment| %>
-        <%# <div>
+        <% @comments.each do |question| %>
+        <div>
+        
             <div class="comments">
-                <div> %>
-                <%#= @user.find(comment.user_id).username %>
+                <div>
+                <%= question.user.username %>
                 
-                <%# </div>
-                <div class="small-p"> %>
+                </div>
+                <div class="small-p">
 
-                <%#= comment.body%>
+                <%= question.body%>
                 
-                <%# </div> 
+                </div> 
                 <button class="comment-reply-btn">reply</button>
             </div>
-        </div> %>
-        <%# end %>
+        </div>
+        <% end %>
 
 
     </div>
