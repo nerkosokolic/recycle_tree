@@ -18,21 +18,30 @@
 
         <p>Have a question?</p>
 
-        <form class="comments-form" action="/comments" method="post">
+        <form class="comments-form" action="/questions" method="post">
         <textarea name="body"></textarea>
         <input type="hidden" name="listing_id" value="<%= @listing.id %>">
         <button>post comment</button>
         </form>
 
-        <% @comments.each do |comment| %>
-        <div>
+
+        <%# @comments.each do |comment| %>
+        <%# <div>
             <div class="comments">
-                <div><%= @user.find(comment.user_id).username %></div>
-                <div class="small-p"><%= comment.body%></div> 
+                <div> %>
+                <%#= @user.find(comment.user_id).username %>
+                
+                <%# </div>
+                <div class="small-p"> %>
+
+                <%#= comment.body%>
+                
+                <%# </div> 
                 <button class="comment-reply-btn">reply</button>
             </div>
-        </div>
-        <% end %>
+        </div> %>
+        <%# end %>
+
 
     </div>
 </div>
@@ -41,6 +50,7 @@
 var replyBtns = document.querySelectorAll('.comment-reply-btn')
 
 var reply = event => {
+    // <form class="comments-form" action="/comments" method="post">
     console.log('working')
     var replyBtnClicked = event.target
     // debugger
