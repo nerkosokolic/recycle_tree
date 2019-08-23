@@ -18,7 +18,8 @@ CREATE TABLE "listings" (
   "last_updated" timestamp,
   "street_address" VARCHAR(300),
   "postcode" VARCHAR(300),
-  "image_url" VARCHAR(300)
+  "image_url" VARCHAR(300),
+  "listing_status" VARCHAR(50)
 );
 
 CREATE TABLE "categories" (

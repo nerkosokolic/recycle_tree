@@ -26,21 +26,22 @@
 
 
         <% @comments.each do |question| %>
-        <div>
-        
             <div class="comments">
                 <div>
-                <%= question.user.username %>
-                
+                    <%= question.user.username %>
                 </div>
                 <div class="small-p">
-
-                <%= question.body%>
-                
+                    <%= question.body%>
                 </div> 
                 <button class="comment-reply-btn">reply</button>
             </div>
-        </div>
+
+             <div class="answers">
+                <form class="comments-form" action="/answers" method="post">
+                    <input type="text" class="comments-reply" name="item">
+                    <button class="comment-reply-btn">reply</button>
+                </form>
+            </div>
         <% end %>
 
 
@@ -54,20 +55,22 @@ var reply = event => {
     // <form class="comments-form" action="/comments" method="post">
     console.log('working')
     var replyBtnClicked = event.target
+    var answerReply = replyBtnClicked.parentElement.nextElementSibling
+    answerReply.style.display = "block"
     // debugger
-    var question = replyBtnClicked.parentElement.parentElement
-    var div = document.createElement('div')
-    div.className = "comments"
-    question.appendChild(div)
-    var input = document.createElement('input')
-    input.type = "text"
-    input.className = "comments-reply"
-    input.name = "item"
-    div.appendChild(input)
-    var button = document.createElement('button')
-    button.className = "comment-reply-btn"
-    button.textContent = "reply"
-    div.appendChild(button)
+    // var question = replyBtnClicked.parentElement.parentElement
+    // var div = document.createElement('div')
+    // div.className = "comments"
+    // question.appendChild(div)
+    // var input = document.createElement('input')
+    // input.type = "text"
+    // input.className = "comments-reply"
+    // input.name = "item"
+    // div.appendChild(input)
+    // var button = document.createElement('button')
+    // button.className = "comment-reply-btn"
+    // button.textContent = "reply"
+    // div.appendChild(button)
 
 }
 

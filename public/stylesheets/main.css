@@ -125,7 +125,10 @@ input[type=text].home-search-location {
   color: grey;
   border: 1px solid grey;
   background-color: #f1f1f1;
-  
+}
+
+.answers {
+  display: none;
 }
 
 .message-form textarea {
