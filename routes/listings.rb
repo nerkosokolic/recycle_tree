@@ -13,7 +13,6 @@ get '/listings/:id' do
     @listing = Listing.find(params[:id])
     @category = Category.find(@listing.category_id)
     @comments = Comment.where(listing_id: params[:id])
-    @user = User
     erb :item
 end
 
