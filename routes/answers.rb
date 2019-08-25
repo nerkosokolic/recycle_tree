@@ -22,6 +22,6 @@ post '/answers' do
     # binding.pry
     answer.save
     comment.save
-    # send_answer_email
+    send_answer_email
     redirect "/listings/#{params[:listing_id]}"
 end
