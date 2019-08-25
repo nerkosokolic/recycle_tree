@@ -8,7 +8,14 @@
         <p>Description</p>
         <p class="small-p"><%= @listing.description %></p>
 
-        <img class="listing-img" src="<%= @listing.image_url %>" alt="">
+        <% if @listing.status == "active" %>
+            <img class="listing-img" src="<%= @listing.image_url %>" alt="">
+        <% else %>
+            <div class="under-offer-wrapper">
+             <img class="under-offer-image" src="<%= @listing.image_url %>" alt="">
+             <div class="under-offer-img-text">under offer</div>
+             </div>
+        <% end %>
 
         <% if !session[:user_id] %>
             <div class="clearfix">
@@ -87,9 +94,14 @@
         <% else %>
 
             <div class="clearfix">
+                <% if @listing.status == "active" %>
                     <form action="/listings/<%=params[:id]%>/taken">
-                        <button type="submit" class="take_btn">Take</button>
+                        <button type="submit" class="take-btn">Take</button>
                     </form>
+                <% else %>
+                    <button class="under-offer-btn">Under Offer</button>
+                    <div class="under-offer"> This item is currently under offer. </div>
+                <% end %>
             </div>
 
             <p>Have a question?</p>

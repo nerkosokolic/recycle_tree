@@ -95,13 +95,54 @@
     display: none;
   }
   
-  .take_btn {
+  .take-btn {
     padding: 14px 20px;
     background-color: orange;
     color: white;
     width: 50%;
   }
   
+  .under-offer-btn {
+    padding: 14px 20px;
+    background-color: rgb(191, 188, 188, 1.0);
+    color: red;
+    width: 50%;
+  }
+
+  .under-offer {
+    color: red;
+  }
+
+  .under-offer-image {
+    opacity: 0.4;
+    object-fit: cover;
+    height: 300px;
+    width: 100%;
+    margin: 20px 0 20px 0;
+  }
+
+  .under-offer-wrapper {
+    position: relative;
+  }
+
+  .under-offer-img-text {
+    position: absolute;
+    right: 90px;
+    top: 150px;
+    font-size: 3rem;
+    color: red;
+    transform: rotate(-30deg);
+  }
+
+  .account-view-button {
+    display: inline;
+  }
+
+  .approve-button {
+    font-size: 10px;
+    display: inline;
+  }
+
   .comments-form {
     display: inline-flex;
   }
@@ -171,6 +212,29 @@
   .listing-picture img {
     max-width: 200px;
   }
+
+  .listing-picture-under-offer {
+    padding: 30px 20px;
+  }
+
+  .listing-picture-under-offer img {
+    max-width: 200px;
+    opacity: 0.4;
+  }
+
+  .listing-picture-under-offer-wrapper {
+    position: relative;
+  }
+
+  .listing-picture-under-offer-text {
+    position: absolute;
+    right: 40px;
+    top: 80px;
+    font-size: 1.5rem;
+    color: red;
+    transform: rotate(-30deg);
+  }
+
     
     .top-right {
       padding: 20px;

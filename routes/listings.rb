@@ -29,6 +29,19 @@ end
  
 
 get '/listings/:id/taken' do
+    listing = Listing.find(params[:id])
+    listing.status = "under offer"
+    @listing_title = listing.title
+    listing.save
+
+    listing_owner = User.find(listing.user_id)
+    @listing_owner_email = listing_owner.email
+
+    user_taker = User.find_by(id: session[:user_id]) 
+    @user_taker_username = user_taker.username
+    
+    send_under_offer_email
+    
     erb :taken
 end
 
@@ -72,6 +85,22 @@ post '/listings' do
     redirect '/give_success'
 end
 
+put '/listings/approved' do
+    listing_id = params[:id]
+    listing = Listing.find(listing_id)
+    listing.status = "taken"
+    binding.pry
+    # listing.save
+    redirect "/my_account"
+end
+
+put '/listings/rejected' do
+    listing_id = params[:id]
+    listing = Listing.find(listing_id)
+    listing.status = "active"
+    listing.save
+    redirect "/my_account"
+end
 
 
 

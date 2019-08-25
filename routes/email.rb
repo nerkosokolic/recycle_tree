@@ -50,3 +50,20 @@ def send_answer_email
     puts response.body
     puts response.headers
 end
+
+def send_under_offer_email
+    from = Email.new(email: 'listings@recycleconnect.com.au')
+    to = Email.new(email: "#{@listing_owner_email}")
+    subject = "Someone wants to take your #{@listing_title} listing on Recycle Connect!"
+    content = Content.new(type: 'text/plain', value: "Great news! #{ @user_taker_username } wants to take your #{ @listing_title } that you listed on Recycle Connect.
+    
+    Login to your account to approve their request.
+    http://localhost:4567/my_account")
+    mail = Mail.new(from, subject, to, content)
+
+    sg = SendGrid::API.new(api_key: ENV['SENDGRID_API_KEY'])
+    response = sg.client.mail._('send').post(request_body: mail.to_json)
+    puts response.status_code
+    puts response.body
+    puts response.headers
+end
