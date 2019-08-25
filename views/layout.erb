@@ -31,10 +31,10 @@
 </div> %>
  <% if logged_in? %>  
   <div>
-    <p id="current-user" class="small-p"><%= current_user.username%></p>
+    <p style="color: white;" id="current-user" class="small-p"><%= current_user.username%></p>
     <form action="/sessions" method="post">
       <input type="hidden" name="_method" value="delete">
-      <button id="logoutBtn">Log Out</button>
+      <button style="color: white;" id="logoutBtn">Log Out</button>
     </form>
   </div> 
  <%# <% else %> 

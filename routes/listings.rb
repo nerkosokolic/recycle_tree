@@ -89,8 +89,7 @@ put '/listings/approved' do
     listing_id = params[:id]
     listing = Listing.find(listing_id)
     listing.status = "taken"
-    binding.pry
-    # listing.save
+    listing.save
     redirect "/my_account"
 end
 

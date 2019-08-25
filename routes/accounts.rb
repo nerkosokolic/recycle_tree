@@ -18,21 +18,3 @@ put '/my_account/:id' do
     @user.save
     redirect '/my_account'
 end
-
-# update the existing dish
-put '/approved' do
-  listing_id = params[:id]
-  listing = Listing.find(listing_id)
-  listing.status = "taken"
-  binding.pry
-  # listing.save
-  redirect "/my_account"
-end
-
-put '/rejected' do
-  listing_id = params[:id]
-  listing = Listing.find(listing_id)
-  listing.status = "active"
-  listing.save
-  redirect "/my_account"
-end
