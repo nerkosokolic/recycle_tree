@@ -290,10 +290,10 @@
     width: 100%;
     overflow: auto;
     background-color: #f1f1f1;
-    border-top-left-radius: 50% 20%;
+    /* border-top-left-radius: 50% 20%;
       border-top-right-radius: 50% 20%;
       border-bottom-left-radius: 50% 20%;
-      border-bottom-right-radius: 50% 20%;
+      border-bottom-right-radius: 50% 20%; */
   }
   
    
