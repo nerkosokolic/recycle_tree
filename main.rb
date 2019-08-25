@@ -4,7 +4,11 @@ require 'sinatra/reloader' if development?
 require_relative 'database_config'
 require 'bcrypt'
 
+also_reload File.expand_path(__dir__, 'models/*')
+also_reload File.expand_path(__dir__, 'views/*')
+also_reload File.expand_path(__dir__, 'routes/*')
 
+require_relative 'models/answer'
 require_relative 'models/business'
 require_relative 'models/category'
 require_relative 'models/comment'
@@ -31,20 +35,6 @@ end
 
 end
 
-
-also_reload File.expand_path(__dir__, "views/*")
-also_reload File.expand_path(__dir__, "models/*")
-
-
-require_relative 'routes/accounts'
-require_relative 'routes/listings'
-require_relative 'routes/maps'
-require_relative 'routes/messages'
-require_relative 'routes/questions'
-require_relative 'routes/sessions'
-
-
-
 after do
   ActiveRecord::Base.connection.close
 end
@@ -52,3 +42,13 @@ end
 get '/' do
   erb :index
 end
+
+require_relative 'routes/accounts'
+require_relative 'routes/listings'
+require_relative 'routes/maps'
+require_relative 'routes/messages'
+require_relative 'routes/questions'
+require_relative 'routes/answers'
+require_relative 'routes/sessions'
+# require_relative 'email'
+require_relative 'routes/email'

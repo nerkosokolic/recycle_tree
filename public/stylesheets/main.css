@@ -107,7 +107,7 @@ input[type=text].home-search-location {
 
 .comments {
   display: flex;
-  justify-content: space-evenly;
+  /* justify-content: space-evenly; */
   align-items: center;
   padding-top: 5px;
 }
@@ -115,6 +115,18 @@ input[type=text].home-search-location {
 .comments .small-p  {
   margin-left: 10px;
 }
+
+.comments-answered {
+  display: flex;
+  align-items: center;
+  margin: 5px 0 5px 30px;
+}
+
+.comments-answered .small-p  {
+  margin-left: 10px;
+}
+
+
 
 .comment-reply-btn {
   font-size: 12px;
@@ -125,7 +137,15 @@ input[type=text].home-search-location {
   color: grey;
   border: 1px solid grey;
   background-color: #f1f1f1;
-  
+}
+
+.answers {
+  display: none;
+}
+
+.q-and-a-label {
+  font-weight: bold;
+  padding-right: 10px;
 }
 
 .message-form textarea {

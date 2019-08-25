@@ -10,12 +10,20 @@
     
     <p>Title</p>
     <p class="small-p"><%= @title%></p>
+    <input type="hidden" name="title" value="<%= @title %>">
     <p>Category</p>
     <p class="small-p"><%= @category%></p>
+    <input type="hidden" name="category" value="<%= @category %>">
     <p>Description</p>
     <p class="small-p"><%= @description %></p>
+    <input type="hidden" name="description" value="<%= @description %>">
 
 <img class="listing-img" src="<%= @image %>" alt="">
+<input type="hidden" name="image_url" value="<%= @image %>">
+
+<input type="hidden" name="street_address" value="<%= @street_address %>">
+<input type="hidden" name="postcode" value="<%= @post_code %>">
+
 
   <div class="clearfix">
       <button type="button" class="third-btn">Cancel</button>
