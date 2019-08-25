@@ -41,7 +41,6 @@ end
 
 
 get '/give_form' do
-    
     @search_term = params[:item]
     erb :give_form
 end
