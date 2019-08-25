@@ -43,6 +43,10 @@ get '/' do
   erb :index
 end
 
+get '/about' do
+  erb :about
+end
+
 require_relative 'routes/accounts'
 require_relative 'routes/listings'
 require_relative 'routes/maps'
