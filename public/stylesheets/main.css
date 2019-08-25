@@ -1,3 +1,4 @@
+
 :root {
   /* --primary-color: #ff9900; 
   --secondary-color: #88c6da; */
@@ -21,13 +22,13 @@
     
     body {
       color: var(--primary-color);
-      margin: 30px auto;
+      margin: 0 auto;
       font-family: 'Montserrat', sans-serif;
       letter-spacing: 1px;
+      background-color: #f1f1f1;
     }
   
     .home-section {
-      width: 80%;
         max-width: 950px;
         margin: 0 auto;
     }
@@ -38,6 +39,14 @@
       height: 400px;
       
     }
+
+    h1 {
+      margin: 0;
+    }
+
+    header {
+      margin: 0;
+    }
   
   .intro {
     padding: 0 0 4px 0;
@@ -46,11 +55,13 @@
   input[type=text].home-search {
     width: 35%;
     margin: 20px 0 ;
+    background-color: white;
   }
   
   input[type=text].home-search-location {
     width: 15%;
     margin: 20px 0 ;
+    background-color: white;
   }
   
   .home-section {
@@ -162,7 +173,7 @@
     align-items: center;
     padding-top: 5px;
   }
-
+​
   .comments-answered {
     display: flex;
     align-items: center;
@@ -188,7 +199,7 @@
     background-color: #f1f1f1;
     
   }
-
+​
   .answers {
     display: none;
   }
@@ -268,6 +279,8 @@
       height: 100%; 
       overflow: auto; 
       background-color: #f1f1f1;
+      border-top-left-radius: 40% 12%;
+      border-top-right-radius: 40% 12%;
       /* background-image: url("https://images.unsplash.com/photo-1481761289552-381112059e05?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2661&q=80"); */
   }
   .greybackground {
@@ -277,6 +290,10 @@
     width: 100%;
     overflow: auto;
     background-color: #f1f1f1;
+    border-top-left-radius: 50% 20%;
+      border-top-right-radius: 50% 20%;
+      border-bottom-left-radius: 50% 20%;
+      border-bottom-right-radius: 50% 20%;
   }
   
    
@@ -303,7 +320,6 @@
       width: 80%; 
       max-width: 500px;
       border-radius: 16px;
-
       box-shadow: 1px 1px 1px lightgrey;
     }
     
@@ -326,13 +342,13 @@
       padding: 10px 0;
       width: 28%;
       height: 200px;
-
+​
     }
   
     .home-thumbnail {
       display: inline-block;
       padding: 10px 0;
-      width: 100%;
+      width: 90%;
       height: 200px;
       position: relative;
       
@@ -440,35 +456,59 @@
     }
     header {
      
-        font-family: 'Montserrat', sans-serif;
-        display: inline;
-      
-        /* background-image: url("http://www.estrategiaods.org.br/wp-content/uploads/2017/11/coleta-seletiva-lixo-reciclavel-sp-01.jpg");
-        background-position: center; 
-        background-repeat: no-repeat; 
-        background-size: cover; */
+        /* font-family: 'Montserrat', sans-serif; */
+        font-family: 'Raleway', sans-serif;
+        /* background-color: #f1f1f1; */
+     
+        /* display: inline; */
+        
         
     }
+   
+      .header-img {
+        position: relative;
+        background-image: url("https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fi.imgur.com%2FSgOJUdu.jpg%3F1");
+          /* margin: 0 auto; */
+          height: 260px;
+          border-bottom-left-radius: 50% 20%;
+          border-bottom-right-radius: 50% 20%;
+          background-image: no-repeat;
+          background-position: top;
+          background-position: fixed;
+          background-size: cover;
+          opacity: 0.6;
+          filter: alpha(opacity=50);
+      }
+      /* #svg {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 10vw; */
+        /* set height to pixels if you want angle to change with screen width */
+      /* } */
     
-    header h1 {
-      color: var(--primary-color);
-      font-size: 3em;
-      margin: 50px 0 10px 0;
+    
+    
+    h1 { 
+      /* color: var(--primary-color); */
+      color: white;
+      font-size: 3.5em;
       text-align: center !important;
       letter-spacing: 1px;
-    }
+      padding-top: 20px;
+    } 
     
     a {
       color: var(--primary-color);
       text-decoration: none;
     }
     
-    nav ul {
+    /* nav ul {
       list-style: none;
       margin: 0;
       padding: 0;
     
-    }
+    } */
   
     
     #topnav a:hover {
@@ -540,13 +580,15 @@
       margin: 5px 0 22px 0;
       display: inline-block;
       border: none;
-      background: #f1f1f1;
+      background:#f1f1f1;
+     
     }
   
     
     input[type=text]:focus, input[type=password]:focus {
-      background-color: #ddd;
+      background-color:#ddd;
       outline: none;
+    
     }
     
   
@@ -650,7 +692,7 @@
       float: left;
       width: 50%;
     }
-  
+
     .third-btn {
       float: left;
       width: 28%;
@@ -717,6 +759,10 @@
         width: 100%;
       }
     }
+    @media screen and (max-height: 450px) {
+      .sidenav {padding-top: 15px;}
+      .sidenav a {font-size: 12px;}
+    }
     
     
     @media (min-width: 600px) {
@@ -727,14 +773,14 @@
       }
   
     
-  
+/*   
       header h1 {
           margin: 50px 0 20px 0;
       
-        }
+        } */
   
       .home-section {
-          padding-top: 80px;
+        padding-top: 30px;
         }
   
       .home-thumbnail {
@@ -782,7 +828,6 @@
     }
   
   .listing-container {
-
     display: flex;
     padding: 16px;
     text-align: left;
@@ -799,9 +844,7 @@
     
   
   }
-
   .account-listing-container {
-
     display: flex;
     padding: 16px;
     text-align: left;
@@ -815,8 +858,6 @@
     border-radius: 16px;
     /* box-shadow: #a7a6a6 */
     box-shadow: 1px 1px 1px lightgrey;
-    
-  
   }
   
   .listing-id {
@@ -859,7 +900,6 @@
   
   .account-listing-table {
     width: 80%;
-    max-width: 950px;
   }
   
   .account-listing-table th  {
@@ -896,7 +936,40 @@
     width: 75%;
     margin: 0;
     padding: 0;
-    border-left: 2px solid black;
+    border-left: 1px solid grey;
   }
   
+  .sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: var(--primary-color);
+    /* opacity: 50%; */
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
   
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
