@@ -19,7 +19,7 @@ CREATE TABLE "listings" (
   "street_address" VARCHAR(300),
   "postcode" VARCHAR(300),
   "image_url" VARCHAR(300),
-  "listing_status" VARCHAR(50)
+  "status" VARCHAR(50)
 );
 
 CREATE TABLE "categories" (
@@ -51,5 +51,17 @@ CREATE TABLE "comments" (
   "body" text,
   "date_created" timestamp,
   "question_read" boolean,
+  "comment_type" VARCHAR(50),
+  "question_replied" VARCHAR(50)
+);
+
+CREATE TABLE "answers" (
+  "id" SERIAL PRIMARY KEY,
+  "listing_id" int,
+  "user_id" int,
+  "comment_id" int,
+  "body" text,
+  "date_created" timestamp,
+  "answer_read" boolean,
   "comment_type" VARCHAR(50)
 );

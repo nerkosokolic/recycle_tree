@@ -10,43 +10,127 @@
 
         <img class="listing-img" src="<%= @listing.image_url %>" alt="">
 
-        <div class="clearfix">
-            <form action="/listings/<%=params[:id]%>/taken">
-                <button type="submit" class="take_btn">Take</button>
-            </form>
-        </div>
-
-        <p>Have a question?</p>
-
-        <form class="comments-form" action="/questions" method="post">
-        <textarea name="body"></textarea>
-        <input type="hidden" name="listing_id" value="<%= @listing.id %>">
-        <button>post comment</button>
-        </form>
-
-
-        <% @comments.each do |question| %>
-            <div class="comments">
-                <div>
-                    <%= question.user.username %>
-                </div>
-                <div class="small-p">
-                    <%= question.body%>
-                </div> 
-                <button class="comment-reply-btn">reply</button>
-            </div>
-
-             <div class="answers">
-                <form class="comments-form" action="/answers" method="post">
-                    <input type="text" class="comments-reply" name="item">
-                    <button class="comment-reply-btn">reply</button>
+        <% if !session[:user_id] %>
+            <div class="clearfix">
+                <div>Want this item?</div>
+                <div>You must be a registered user to take items</div>
+                <form action="/signup">
+                    <button type="submit" class="take_btn">Signup to take</button>
                 </form>
             </div>
-        <% end %>
 
+            <p>Questions and answers</p>
+
+            <% @comments.each do |question| %>
+            
+                <div class="comments">
+                  <div class="q-and-a-label">Q:</div>
+                        <div>
+                            <%= question.user.username %>
+                        </div>
+                        <div class="small-p">
+                            <%= question.body%>
+                        </div> 
+                </div>
+                
+                <div class="comments">
+                    <% @answers.each do |answer| %>
+                        <div class="q-and-a-label">A:</div>
+                        <% if question.id == answer.comment_id %>
+                            <div><%= answer.user.username %></div>
+                            <div class="small-p"><%= answer.body%></div> 
+                        <% end %>
+                    <% end %>
+                </div>
+                
+            <% end %>
+
+        <% elsif @listing.user_id == session[:user_id] %>
+
+            <p>Questions and answers</p>
+            <% @comments.each do |question| %>
+                <div class="comments">
+                    <div class="q-and-a-label">Q:</div>
+                        <div>
+                            <%= question.user.username %>
+                        </div>
+                        <div class="small-p">
+                            <%= question.body%>
+                        </div> 
+                        <% if question.question_replied == "no" %>
+                            <button class="comment-reply-btn">reply</button>
+                        <% end %>
+                </div>
+
+                <div class="answers">
+                    <form class="comments-form" action="/answers" method="post">
+                        <input type="text" name="body">
+                        <input type="hidden" name="listing_id" value="<%= @listing.id %>">
+                        <input type="hidden" name="comment_id" value="<%= question.id %>">
+                        <button class="comment-reply-btn">reply</button>
+                    </form>
+                </div>
+                    
+                <div class="comments-answered">
+                    <% @answers.each do |answer| %>
+                        <% if question.id == answer.comment_id %>
+                            <div class="q-and-a-label">A:</div>
+                            <div><%= answer.user.username %></div>
+                            <div class="small-p"><%= answer.body%></div> 
+                        <% end %>
+                    <% end %>
+                </div>
+                    
+            <% end %>
+
+        <% else %>
+
+            <div class="clearfix">
+                    <form action="/listings/<%=params[:id]%>/taken">
+                        <button type="submit" class="take_btn">Take</button>
+                    </form>
+            </div>
+
+            <p>Have a question?</p>
+
+            <form class="comments-form" action="/questions" method="post">
+            <textarea name="body"></textarea>
+            <input type="hidden" name="listing_id" value="<%= @listing.id %>">
+            <button>post question</button>
+            </form>
+
+            <p>Questions and answers</p>
+            <% @comments.each do |question| %>
+                <div class="comments">
+                    <div class="q-and-a-label">Q:</div>
+                        <div>
+                            <%= question.user.username %>
+                        </div>
+                        <div class="small-p">
+                            <%= question.body%>
+                        </div> 
+                </div>
+                    
+                <div class="comments-answered">
+                    <% @answers.each do |answer| %>
+                        <% if question.id == answer.comment_id %>
+                            <div class="q-and-a-label">A:</div>
+                            <div><%= answer.user.username %></div>
+                            <div class="small-p"><%= answer.body%></div> 
+                        <% end %>
+                    <% end %>
+                </div>
+                    
+            <% end %>
+
+
+        <% end %>
 
     </div>
 </div>
+
+
+
 
 <script>
 var replyBtns = document.querySelectorAll('.comment-reply-btn')
@@ -77,5 +161,7 @@ var reply = event => {
 replyBtns.forEach( replyBtn => {
     replyBtn.addEventListener('click', reply)
 })
+
+
 
 </script>
