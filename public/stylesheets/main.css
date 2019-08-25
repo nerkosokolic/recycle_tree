@@ -27,6 +27,7 @@
     }
   
     .home-section {
+      width: 80%;
         max-width: 950px;
         margin: 0 auto;
     }
@@ -734,6 +735,25 @@
     
   
   }
+
+  .account-listing-container {
+
+    display: flex;
+    padding: 16px;
+    text-align: left;
+    background-color: white;
+    color: var(--primary-color);
+    margin: 30px auto;
+    padding: 10px;
+    /* border: 1px solid grey; */
+    width: 80%; 
+    max-width: 950px;
+    border-radius: 16px;
+    /* box-shadow: #a7a6a6 */
+    box-shadow: 1px 1px 1px lightgrey;
+    
+  
+  }
   
   .listing-id {
     border: 2px solid rgb(198, 198, 198);
@@ -774,7 +794,8 @@
   }
   
   .account-listing-table {
-    width: 100%;
+    width: 80%;
+    max-width: 950px;
   }
   
   .account-listing-table th  {
