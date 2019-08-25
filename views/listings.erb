@@ -1,20 +1,26 @@
 
 <% @listings.each do |listing| %>
-    <div class="listing-container">
-        <div class="listing-id">
-            <div class="listing-picture"><img src="<%= listing.image_url %>" alt=""></div>
+
+    <div class="greybackground">
+        <div class="listing-container">
+            <div class="listing-picture">
+                <img src="<%= listing.image_url %>" alt="">
+            </div>
             <div>
                 <h2><%= listing.title %></h2>
-                <p>
+                <p class="small-p">
                 <%= listing.description %>
                 </p>
-                <div class=listing-footer>
-                    <span>Created: <%= listing.date_created %></span>
-                    <form action="/listings/<%= listing.id %>">
-                        <button type="submit">View</button>
-                    </form>
-                </div>
+            <div class=listing-footer>
+                <span class="tiny-p">Created: <%= listing.date_created %></span>        
             </div>
+        </div>
+            <div>
+                <form action="/listings/<%= listing.id %>">
+                    <button type="submit">View</button>
+                </form>
+            </div>
+            
         </div>
     </div>
 <% end %>

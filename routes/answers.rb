@@ -19,7 +19,7 @@ post '/answers' do
     user = User.find(session[:user_id])
     @username = user.username
 
-    binding.pry
+    # binding.pry
     answer.save
     comment.save
     # send_answer_email
