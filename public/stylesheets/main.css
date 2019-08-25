@@ -946,7 +946,7 @@
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: var(--primary-color);
+    background-color: #b8cd97;
     /* opacity: 50%; */
     overflow-x: hidden;
     transition: 0.5s;
