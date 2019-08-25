@@ -16,6 +16,6 @@ post '/questions' do
 
     # binding.pry
     @question.save
-    # send_question_email
+    send_question_email
     redirect "/listings/#{params[:listing_id]}"
 end
