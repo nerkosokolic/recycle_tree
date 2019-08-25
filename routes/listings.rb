@@ -34,6 +34,8 @@ end
 
 
 get '/give_success' do
+    listing = Listing.last
+    @listing_id = listing.id
     erb :give_success
 end
 
@@ -66,6 +68,7 @@ post '/listings' do
     listing.postcode = params[:postcode]
     listing.image_url = params[:image_url]
     listing.date_created = Time.now
+    listing.status = 'active'
     listing.save
     redirect '/give_success'
 end

@@ -35,8 +35,8 @@
                 
                 <div class="comments">
                     <% @answers.each do |answer| %>
-                        <div class="q-and-a-label">A:</div>
                         <% if question.id == answer.comment_id %>
+                        <div class="q-and-a-label">A:</div>
                             <div><%= answer.user.username %></div>
                             <div class="small-p"><%= answer.body%></div> 
                         <% end %>
@@ -141,6 +141,7 @@ var reply = event => {
     console.log('working')
     var replyBtnClicked = event.target
     var answerReply = replyBtnClicked.parentElement.nextElementSibling
+    debugger
     answerReply.style.display = "block"
     // debugger
     // var question = replyBtnClicked.parentElement.parentElement
