@@ -1,26 +1,39 @@
-
 <% @listings.each do |listing| %>
 
-    <div class="greybackground">
-        <div class="listing-container">
-            <div class="listing-picture">
-                <img src="<%= listing.image_url %>" alt="">
+    <% if listing.status != "taken" %>
+        <div class="greybackground">
+            <div class="listing-container">
+
+                <% if listing.status == "active" %>
+                    <div class="listing-picture">
+                        <img src="<%= listing.image_url %>" alt="">
+                    </div>
+                <% elsif listing.status == "under offer"  %>
+                    <div class="listing-picture-under-offer-wrapper">
+                        <div class="listing-picture-under-offer">
+                            <img src="<%= listing.image_url %>" alt="">
+                        </div>
+                        <div class="listing-picture-under-offer-text">under offer</div>
+                    </div>
+                <% end %>
+
+                <div>
+                    <h2><%= listing.title %></h2>
+                    <p class="small-p">
+                    <%= listing.description %>
+                    </p>
+                <div class=listing-footer>
+                    <span class="tiny-p">Created: <%= listing.date_created %></span>        
+                </div>
             </div>
-            <div>
-                <h2><%= listing.title %></h2>
-                <p class="small-p">
-                <%= listing.description %>
-                </p>
-            <div class=listing-footer>
-                <span class="tiny-p">Created: <%= listing.date_created %></span>        
+                <div>
+                    <form action="/listings/<%= listing.id %>">
+                        <button type="submit">View</button>
+                    </form>
+                </div>
+                
             </div>
         </div>
-            <div>
-                <form action="/listings/<%= listing.id %>">
-                    <button type="submit">View</button>
-                </form>
-            </div>
-            
-        </div>
-    </div>
+    <% end %>
+    
 <% end %>

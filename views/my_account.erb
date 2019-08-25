@@ -1,10 +1,70 @@
 <div class="greybackground">
 
         <h2>My Account</h2>
+        <h2><%=@user%></h2>
     <div class="account-listing-container">
     
     
-        <h3>Listings</h3>
+        <h3>Listings </br> Posted</h3>
+        <table class='account-listing-table'>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Category</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+    <% if @user_listings.count() > 0 %>
+        <% @user_listings.each do |listing| %>
+            <tr>
+                <td><%= listing.id %></td>
+                <td><%= listing.title %></td>
+                <td> <%= @category.find(listing.category_id).title %> </td>
+                <td>
+                    <%= listing.status %>
+                    <% if listing.status == "under offer"%>
+                        <div>
+                            <form class="approve-button" action="/listings/approved" method="post">
+                                <input type="hidden" name="_method" value="put">
+                                <input type="hidden" name="id" value="<%= listing.id %>">
+                                <button class="approve-btn">Approve</button>
+                            </form>
+                            <form class="approve-button" action="/listings/rejected" method="post">
+                                <input type="hidden" name="_method" value="put">
+                                <input type="hidden" name="id" value="<%= listing.id %>">
+                                <button class="approve-btn">Reject</button>
+                            </form>
+                        </div>
+                    <% end %>
+                </td>
+                <td>
+                    <form class="account-view-button" action="/listings/<%= listing.id %>">
+                        <button class="acct-view-btn">View</button>
+                    </form>
+                </td>
+            </tr>
+        <% end %>   
+    <% else %>
+            <tr>
+                <td>01</td>
+                <td>Radio</td>
+                <td>Electronics</td>
+                <td>23/01/2019</td>
+                <td><button>View</button><button>Taken</button></td>
+            </tr>
+            <tr>
+                <td>02</td>
+                <td>Scrappes</td>
+                <td>Eco-Waste</td>
+                <td>23/01/2019</td>
+                <td><button>View</button><button>Taken</button></td>
+            </tr>
+    <% end %>
+        </table>
+    </div>
+
+    <div class="account-listing-container">
+        <h3>Listings </br> Taken</h3>
         <table class='account-listing-table'>
             <tr>
                 <th>ID</th>
