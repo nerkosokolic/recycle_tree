@@ -1,5 +1,7 @@
 # Recycle-Tree
 
+Check out our app at: https://recycle-connect.herokuapp.com/
+
 An exchange platform that allows users to be environmentally responsible for the minimisation of waste products. Users are empowered with 3 distinct paths to reduce landfill waste.
 
 ## Getting Started
